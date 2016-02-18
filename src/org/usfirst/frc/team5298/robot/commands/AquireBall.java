@@ -1,18 +1,15 @@
 package org.usfirst.frc.team5298.robot.commands;
 
-import org.usfirst.frc.team5298.robot.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class DrivetrainTankDriveCommand extends Command {
+public class AquireBall extends Command {
 
-    public DrivetrainTankDriveCommand() {
+    public AquireBall() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.drivetrain);
     }
 
     // Called just before this Command runs the first time
@@ -20,10 +17,7 @@ public class DrivetrainTankDriveCommand extends Command {
     }
 
     // Called repeatedly when this Command is scheduled to run
-    protected  void execute() {
-    	double  leftSpeed = Robot.oi.driverPad.getLeftY();
-    	double rightSpeed = Robot.oi.driverPad.getRightY();
-    	Robot.drivetrain.tankDrive(-leftSpeed, -rightSpeed);
+    protected void execute() {
     }
 
     // Make this return true when this Command no longer needs to run execute()
