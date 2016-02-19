@@ -1,5 +1,7 @@
 package org.usfirst.frc.team5298.robot.commands;
 
+import org.usfirst.frc.team5298.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -14,6 +16,7 @@ public class RobotLifterRetract extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.robotlifter.retract();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -22,7 +25,7 @@ public class RobotLifterRetract extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

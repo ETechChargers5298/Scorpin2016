@@ -1,7 +1,8 @@
 package org.usfirst.frc.team5298.robot.subsystems;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  *
@@ -11,11 +12,13 @@ public class RobotLifter extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
-	Solenoid lifterLeft;
-	Solenoid lifterRight;
+	Solenoid lifterSolenoid;
+	Talon liftMotor;
+
 	public RobotLifter() {
-		lifterLeft = new Solenoid(0);
-		lifterRight = new Solenoid(1);
+		lifterSolenoid = new Solenoid(0);
+		liftMotor = new Talon(8);
+		
 	}
 
     public void initDefaultCommand() {
@@ -25,9 +28,11 @@ public class RobotLifter extends Subsystem {
     	
     }
     
-    public void liftToggle(boolean extend) {
-    	lifterLeft.set(extend);
-		lifterRight.set(extend);
+    public void extend() {
+    	lifterSolenoid.set(true);
 	}
+    public void retract() {
+    	lifterSolenoid.set(false);
+    }
 }
 

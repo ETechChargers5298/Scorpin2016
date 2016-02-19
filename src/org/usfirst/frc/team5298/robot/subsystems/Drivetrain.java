@@ -21,10 +21,10 @@ public class Drivetrain extends Subsystem {
 	private RobotDrive drive;
 
 	public Drivetrain() {
-		frontRight = new Talon(0);
-		frontLeft = new Talon(1);
-		rearRight = new Talon(2);
-		rearLeft = new Talon(3);
+		frontRight = new Talon(1);
+		frontLeft = new Talon(2);
+		rearRight = new Talon(3);
+		rearLeft = new Talon(4);
 		drive = new RobotDrive(frontLeft, rearLeft, frontRight, rearRight);
 	}
 
