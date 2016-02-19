@@ -13,6 +13,10 @@ public class RobotLifter extends Subsystem {
 	
 	Solenoid lifterLeft;
 	Solenoid lifterRight;
+	public RobotLifter() {
+		lifterLeft = new Solenoid(0);
+		lifterRight = new Solenoid(1);
+	}
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
@@ -21,7 +25,7 @@ public class RobotLifter extends Subsystem {
     	
     }
     
-    public void manualgearShift(boolean extend) {
+    public void liftToggle(boolean extend) {
     	lifterLeft.set(extend);
 		lifterRight.set(extend);
 	}
