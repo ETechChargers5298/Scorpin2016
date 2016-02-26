@@ -6,41 +6,51 @@ import edu.wpi.first.wpilibj.Talon;
 
 
 
+
 /**
  *
  */
 
-public class AquireBall extends Subsystem {
+public class AquireBall extends Subsystem  {
 	
 	private Talon Aquire;
 	
 	public AquireBall() {
 		
-		Aquire = new Talon();
+		Aquire = new Talon(8);
 		
 	}
 	
-	public void Aquire() {
+	public void aquireBall() {
+		
+		
+		Aquire.set(1.0);
+		
 		
 
 	}
 	
 	public void stop() {
 		
+		Aquire.set(0.0);
+		
 		
 	}
 	
-	
-	
-	
-    
-    // Put methods for controlling this subsystem
+	// Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
 
-    public void initDefaultCommand() {
+    
+	public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
-    }
+
+    
+	}
+	
 }
+
+
+
 
