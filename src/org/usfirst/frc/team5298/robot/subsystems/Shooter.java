@@ -11,15 +11,11 @@ public class Shooter extends Subsystem {
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 
-	public void setAim() {
-
-	}
-
-	public void Shoot() {
-
-	}
-
+	
 	Talon shooterMotor;
+	Talon hopperMotor;
+	Talon aimMotor;
+	
 
 	public Shooter() {
 		shooterMotor = new Talon(5);
@@ -31,5 +27,14 @@ public class Shooter extends Subsystem {
 	public void initDefaultCommand() {
 		// Set the default command for a subsystem here.
 		// setDefaultCommand(new MySpecialCommand());
+		
 	}
+	public void setAim() {
+	    aimMotor = new Talon();
+	}
+
+	public void hopper() {
+        hopperMotor = new Talon();
+	}
+
 }
