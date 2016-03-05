@@ -42,6 +42,23 @@ public class OI {
 	public OI() {
 		driverPad = new Gamepad(0);
 		
+		driverGamepad.getStartButton().whenPressed(new EnableAutoGearShiftCommand());
+        driverGamepad.getSelectButton().whenPressed(new DisableAutoGearShiftCommand());
+        driverGamepad.getLeftTrigger().whileHeld(new JionDriveCommand());
+        driverGamepad.getLeftTrigger().whenReleased(new HighGearCommand());
+        driverGamepad.getRightBumper().whenPressed(new FlashlightToggleCommand());
+        driverGamepad.getLeftBumper().whenPressed(new FlashlightToggleCommand());
+        driverGamepad.getLeftTrigger().whileHeld(new HopperRunCommand(true));
+        driverGamepad.getLeftBumper().whileHeld(new HopperRunCommand(false));
+        driverGamepad.getRightTrigger().whileHeld(new AcquirerAcquireCommand());
+        driverGamepad.getRightBumper().whileHeld(new AcquirerDeacquireCommand());
+        driverGamepad.getDPadUp().whenPressed(new ShooterSetHighCommand());
+        driverGamepad.getDPadLeft().whenPressed(new ShooterSetLayupCommand());
+        driverGamepad.getDPadRight().whenPressed(new ShooterSetMaxSpeed());
+        driverGamepad.getDPadDown().whenPressed(new ShooterStopCommand());
+        driverGamepad.getTopButton().whenPressed(new HoodUpCommand());
+        driverGamepad.getRightButton().whenPressed(new HoodDownCommand());
+        driverGamepad.getRightAnalogButton().whenPressed(new DropDownMoveToAngleCommand(40));
 
 	
 	}
