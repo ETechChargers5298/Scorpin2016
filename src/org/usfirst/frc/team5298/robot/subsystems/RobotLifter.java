@@ -28,6 +28,14 @@ public class RobotLifter extends Subsystem {
     	
     }
     
+    public void GoDown () {
+    	liftmotor.set(0.5);
+    	
+    }
+    public void GoUp () {
+    	liftmotor.set(.5);
+    }
+    
     public void extend() {
     	lifterSolenoid.set(true);
 	}

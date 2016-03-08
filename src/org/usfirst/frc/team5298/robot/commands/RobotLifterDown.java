@@ -1,22 +1,20 @@
 package org.usfirst.frc.team5298.robot.commands;
 
-import org.usfirst.frc.team5298.robot.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class RobotLifterRetract extends Command {
+public class RobotLifterDown extends Command {
 
-    public RobotLifterRetract() {
+    public RobotLifterDown() {
         // Use requires() here to declare subsystem dependencies
-        requires(robot.RobotLifter);
+        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.robotlifter.retract();
+    	robot.robotolifter.GoDown();
     }
 
     // Called repeatedly when this Command is scheduled to run

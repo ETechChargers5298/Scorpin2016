@@ -1,9 +1,7 @@
 package org.usfirst.frc.team5298.robot;
 
-import edu.wpi.first.wpilibj.buttons.Button;
-
+import org.usfirst.frc.team5298.robot.commands.RobotLifterRetract;
 import org.usfirst.frc.team5298.utils.Gamepad;
-import org.usfirst.frc.team5298.robot.commands.ExampleCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -41,26 +39,11 @@ public class OI {
 	
 	public OI() {
 		driverPad = new Gamepad(0);
+		driverPad.getLeftAnalogueButton().whenpressed(new RobotlifterExtend)));
+		driverPad.getRightAnalogueButton().whenpressed(new RobotLifterRetract)));
+		driverPad.getRightBumper().whileHeld(new RobotLifterDown);
+		driverPad.getLeftBumper().whileHeld(new RobotLifterUp);
 		
-		driverGamepad.getStartButton().whenPressed(new EnableAutoGearShiftCommand());
-        driverGamepad.getSelectButton().whenPressed(new DisableAutoGearShiftCommand());
-        driverGamepad.getLeftTrigger().whileHeld(new JionDriveCommand());
-        driverGamepad.getLeftTrigger().whenReleased(new HighGearCommand());
-        driverGamepad.getRightBumper().whenPressed(new FlashlightToggleCommand());
-        driverGamepad.getLeftBumper().whenPressed(new FlashlightToggleCommand());
-        driverGamepad.getLeftTrigger().whileHeld(new HopperRunCommand(true));
-        driverGamepad.getLeftBumper().whileHeld(new HopperRunCommand(false));
-        driverGamepad.getRightTrigger().whileHeld(new AcquirerAcquireCommand());
-        driverGamepad.getRightBumper().whileHeld(new AcquirerDeacquireCommand());
-        driverGamepad.getDPadUp().whenPressed(new ShooterSetHighCommand());
-        driverGamepad.getDPadLeft().whenPressed(new ShooterSetLayupCommand());
-        driverGamepad.getDPadRight().whenPressed(new ShooterSetMaxSpeed());
-        driverGamepad.getDPadDown().whenPressed(new ShooterStopCommand());
-        driverGamepad.getTopButton().whenPressed(new HoodUpCommand());
-        driverGamepad.getRightButton().whenPressed(new HoodDownCommand());
-        driverGamepad.getRightAnalogButton().whenPressed(new DropDownMoveToAngleCommand(40));
-
-	
 	}
 }
 

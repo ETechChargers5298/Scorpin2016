@@ -13,12 +13,13 @@ public class Shooter extends Subsystem {
 
 	
 	Talon shooterMotor;
-	Talon hopperMotor;
 	Talon aimMotor;
 	
 
 	public Shooter() {
 		shooterMotor = new Talon(5);
+		 aimMotor = new Talon(6);
+		 
 	}
 
 	// Put methods for controlling this subsystem
@@ -30,11 +31,11 @@ public class Shooter extends Subsystem {
 		
 	}
 	public void setAim() {
-	    aimMotor = new Talon();
+	   
 	}
 
 	public void hopper() {
-        hopperMotor = new Talon();
+        
 	}
 
 }
