@@ -35,9 +35,9 @@ public class Shooter extends Subsystem {
 	//	shooterMotor.set(1.0);
 	//}
 	
-	//public void reverseShooter() {
-	//	shooterMotor.set(-0.75);
-	//}
+	public void reverseShooter() {
+		shooterMotor.set(-0.75);
+	}
 	public void shooterUp() {
 		aimMotor.set(0.75);
 	   

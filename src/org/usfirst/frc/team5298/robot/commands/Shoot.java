@@ -16,7 +16,7 @@ public class Shoot extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.shooter.setAim();
+   // 	Robot.shooter.setAim();
     }
 
     // Called repeatedly when this Command is scheduled to run
