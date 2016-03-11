@@ -2,9 +2,11 @@
 package org.usfirst.frc.team5298.robot;
 
 import org.usfirst.frc.team5298.robot.commands.ExampleCommand;
+import org.usfirst.frc.team5298.robot.subsystems.AquireBall;
 import org.usfirst.frc.team5298.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team5298.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team5298.robot.subsystems.RobotLifter;
+import org.usfirst.frc.team5298.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -24,8 +26,15 @@ public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
-	public static Drivetrain drivetrain;
-	public static RobotLifter robotlifter;
+	
+	//Subsystems
+	public static DriveTrain drivetrain = new Drivetrain();
+	public static RobotLifter robotlifter = new RobotLifter();
+	public static Shooter shooter = new Shooter();
+	public static AquireBall aquireball = new AquireBall();
+	
+	//public static Drivetrain drivetrain;
+	//public static RobotLifter robotlifter;
     Command autonomousCommand;
     SendableChooser chooser;
 
@@ -34,9 +43,9 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-    	robotlifter = new RobotLifter();
+    	//robotlifter = new RobotLifter();
 		oi = new OI();
-		drivetrain = new Drivetrain();
+		//drivetrain = new Drivetrain();
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());

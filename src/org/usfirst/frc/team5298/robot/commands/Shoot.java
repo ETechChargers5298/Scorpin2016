@@ -1,6 +1,7 @@
 package org.usfirst.frc.team5298.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import org.usfirst.frc.team5298.robot.Robot;
 
 /**
  *
@@ -10,10 +11,12 @@ public class Shoot extends Command {
     public Shoot() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    	requires(Robot.shooter);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.shooter.setAim();
     }
 
     // Called repeatedly when this Command is scheduled to run

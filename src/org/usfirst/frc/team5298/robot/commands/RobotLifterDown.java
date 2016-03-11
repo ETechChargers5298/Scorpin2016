@@ -1,6 +1,7 @@
 package org.usfirst.frc.team5298.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import org.usfirst.frc.team5298.robot.Robot;
 
 /**
  *
@@ -10,11 +11,13 @@ public class RobotLifterDown extends Command {
     public RobotLifterDown() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    	requires (Robot.robotlifter;)
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	robot.robotolifter.GoDown();
+    	Robot.robotlifter.GoDown();
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run

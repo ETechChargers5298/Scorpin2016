@@ -17,14 +17,14 @@ public class AquireBall extends Subsystem  {
 	
 	public AquireBall() {
 		
-		Aquire = new Talon(8);
+		Aquire = new Talon(6);
 		
 	}
 	
 	public void aquireBall() {
 		
 		
-		Aquire.set(1.0);
+		Aquire.set(0.75);
 		
 		
 

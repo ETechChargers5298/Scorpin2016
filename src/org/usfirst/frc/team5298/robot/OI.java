@@ -2,8 +2,11 @@ package org.usfirst.frc.team5298.robot;
 
 import org.usfirst.frc.team5298.robot.commands.AquireBall;
 import org.usfirst.frc.team5298.robot.commands.RobotLifterDown;
+import org.usfirst.frc.team5298.robot.commands.RobotLifterExtend;
 import org.usfirst.frc.team5298.robot.commands.RobotLifterRetract;
 import org.usfirst.frc.team5298.robot.commands.RobotLifterUp;
+import org.usfirst.frc.team5298.robot.commands.Shoot;
+import org.usfirst.frc.team5298.robot.commands.ShooterAcquire;
 import org.usfirst.frc.team5298.utils.Gamepad;
 
 /**
@@ -42,12 +45,15 @@ public class OI {
 	
 	public OI() {
 		driverPad = new Gamepad(0);
-		driverPad.getLeftAnalogueButton().whenpressed(new RobotlifterExtend());
-		driverPad.getRightAnalogueButton().whenpressed(new RobotLifterRetract());
+	//driverPad.getLeftAnalogueButton().whenpressed(new RobotlifterExtend());
+	//driverPad.getRightAnalogueButton().whenpressed(new RobotLifterRetract());
+		driverPad.getLeftAnalogButton().whenPressed(new RobotLifterExtend());
+		driverPad.getRightAnalogButton().whenPressed(new RobotLifterRetract());
 		driverPad.getRightBumper().whileHeld(new RobotLifterDown());
 		driverPad.getLeftBumper().whileHeld(new RobotLifterUp());
-		driverPad.getRightTrigger().whileHeld(new Shooteracquire());
-		driverPad.getLeftTrigger().whenPressed(new AquireBall());
+		driverPad.getLeftTrigger().whileHeld(new AquireBall());
+		driverPad.getRightTrigger().whileHeld(new Shoot());
+		
 	}
 }
 

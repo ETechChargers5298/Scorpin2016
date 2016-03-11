@@ -11,12 +11,12 @@ public class RobotLifterRetract extends Command {
 
     public RobotLifterRetract() {
         // Use requires() here to declare subsystem dependencies
-        requires(robot.RobotLifter);
+        requires(Robot.robotlifter);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.robotlifter.retract();
+    	//Robot.robotlifter.retract();
     }
 
     // Called repeatedly when this Command is scheduled to run

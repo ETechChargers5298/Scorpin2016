@@ -14,6 +14,10 @@ public interface RobotMap {
     public static int RearLeftMotor = 3;
     public static int RearRightMotor = 4;
     
+    
+    public static int liftMotor = 5;
+    public static int shooterMotor = 6;
+    
     // If you are using multiple modules, make sure to define both the port
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;

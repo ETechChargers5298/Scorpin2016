@@ -13,7 +13,7 @@ public class DriveForwardAutom extends Command {
 	private double timeStart;
 
     public DriveForwardAutom() {
-      S  // Use requires() here to declare subsystem dependencies
+        // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.drivetrain);
     }

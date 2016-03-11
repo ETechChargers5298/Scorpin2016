@@ -13,11 +13,11 @@ public class RobotLifter extends Subsystem {
     // here. Call these from Commands.
 	
 	Solenoid lifterSolenoid;
-	Talon liftMotor;
+	Talon liftMotor = new Talon(5);
 
 	public RobotLifter() {
-		lifterSolenoid = new Solenoid(0);
-		liftMotor = new Talon(8);
+		//lifterSolenoid = new Solenoid(0);
+		//liftMotor = new Talon(8);
 		
 	}
 
@@ -29,18 +29,18 @@ public class RobotLifter extends Subsystem {
     }
     
     public void GoDown () {
-    	liftmotor.set(0.5);
+    	liftMotor.set(-0.25);
     	
     }
     public void GoUp () {
-    	liftmotor.set(.5);
+    	liftMotor.set(0.25);
     }
     
-    public void extend() {
-    	lifterSolenoid.set(true);
-	}
-    public void retract() {
-    	lifterSolenoid.set(false);
-    }
+    //public void extend() {
+    	//lifterSolenoid.set(true);
+	//}
+    //public void retract() {
+    	//lifterSolenoid.set(false);
+  //  }
 }
 

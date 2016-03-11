@@ -17,8 +17,8 @@ public class Shooter extends Subsystem {
 	
 
 	public Shooter() {
-		shooterMotor = new Talon(5);
-		 aimMotor = new Talon(6);
+		shooterMotor = new Talon(6);
+		 
 		 
 	}
 
@@ -30,6 +30,14 @@ public class Shooter extends Subsystem {
 		// setDefaultCommand(new MySpecialCommand());
 		
 	}
+	
+	//public void setAim() {
+	//	shooterMotor.set(1.0);
+	//}
+	
+	//public void reverseShooter() {
+	//	shooterMotor.set(-0.75);
+	//}
 	public void shooterUp() {
 		aimMotor.set(0.75);
 	   

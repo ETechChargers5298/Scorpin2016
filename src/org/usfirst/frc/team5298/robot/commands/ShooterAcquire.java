@@ -1,6 +1,7 @@
 package org.usfirst.frc.team5298.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import org.usfirst.frc.team5298.robot.Robot;
 
 /**
  *
@@ -10,14 +11,17 @@ public class ShooterAcquire extends Command {
     public ShooterAcquire() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    	requires(Robot.shooter);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.shooter.reverseShooter();
     }
 
     // Make this return true when this Command no longer needs to run execute()
