@@ -30,12 +30,24 @@ public class Shooter extends Subsystem {
 		// setDefaultCommand(new MySpecialCommand());
 		
 	}
-	public void setAim() {
+	public void shooterUp() {
+		aimMotor.set(0.75);
 	   
 	}
 
-	public void hopper() {
+	public void shooterDown() {
+		aimMotor.set(-0.75);
         
+	}
+	
+	public void acquire() {
+		shooterMotor.set(-0.25);
+		
+	}
+	
+	public void shoot() {
+		shooterMotor.set(1.0);
+		
 	}
 
 }
