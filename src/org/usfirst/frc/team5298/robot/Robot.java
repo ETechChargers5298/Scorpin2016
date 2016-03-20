@@ -28,10 +28,9 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	
 	//Subsystems
-	public static Drivetrain drivetrain = new Drivetrain();
-	public static RobotLifter robotlifter = new RobotLifter();
-	public static Shooter shooter = new Shooter();
-	public static AquireBall aquireball = new AquireBall();
+	public static Drivetrain drivetrain;
+	public static Shooter shooter;
+	public static ServoShooter servoshooter;
 	
 	//public static Drivetrain drivetrain;
 	//public static RobotLifter robotlifter;
@@ -45,11 +44,17 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
     	//robotlifter = new RobotLifter();
 		oi = new OI();
-		//drivetrain = new Drivetrain();
+		drivetrain = new Drivetrain();
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
-//        chooser.addObject("My Auto", new MyAutoCommand());
+        //chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
+		shooter = new Shooter();
+		servoshooter = new ServoShooter();
+		
+		oi = new OI();
+		
+		autonomousCommand = new DriveForwardAUTON();
     }
 	
 	/**
@@ -96,7 +101,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-        Scheduler.getInstance().run();
+        //Scheduler.getInstance().run();
     }
 
     public void teleopInit() {
@@ -104,7 +109,8 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        if (autonomousCommand != null) autonomousCommand.cancel();
+        if (autonomousCommand != null) 
+        	autonomousCommand.cancel();
     }
 
     /**
