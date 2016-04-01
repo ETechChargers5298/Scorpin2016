@@ -2,8 +2,8 @@ package org.usfirst.frc.team5298.robot.commands;
 
 import org.usfirst.frc.team5298.robot.OI;
 import org.usfirst.frc.team5298.robot.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
+
 
 /**
  *
@@ -22,10 +22,8 @@ public class DrivetrainTankDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected  void execute() {
-    	//double  leftSpeed = Robot.oi.driverPad.getLeftY();
-    	//double rightSpeed = Robot.oi.driverPad.getRightY();
-    	double  leftSpeed = OI.driverPad.getLeftY();
-    	double rightSpeed = OI.driverPad.getRightY();
+    	double  leftSpeed = Robot.OI.driverPad.getLeftY();
+    	double rightSpeed = Robot.OI.driverPad.getRightY();
     	Robot.drivetrain.tankDrive(-leftSpeed, -rightSpeed);
     }
 

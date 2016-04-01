@@ -2,11 +2,8 @@
 package org.usfirst.frc.team5298.robot;
 
 import org.usfirst.frc.team5298.robot.commands.ExampleCommand;
-import org.usfirst.frc.team5298.robot.subsystems.AquireBall;
 import org.usfirst.frc.team5298.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team5298.robot.subsystems.ExampleSubsystem;
-import org.usfirst.frc.team5298.robot.subsystems.RobotLifter;
-import org.usfirst.frc.team5298.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -26,14 +23,8 @@ public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
-	
-	//Subsystems
 	public static Drivetrain drivetrain;
-	public static Shooter shooter;
-	public static ServoShooter servoshooter;
-	
-	//public static Drivetrain drivetrain;
-	//public static RobotLifter robotlifter;
+
     Command autonomousCommand;
     SendableChooser chooser;
 
@@ -42,19 +33,12 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-    	//robotlifter = new RobotLifter();
 		oi = new OI();
 		drivetrain = new Drivetrain();
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
-        //chooser.addObject("My Auto", new MyAutoCommand());
+//        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
-		shooter = new Shooter();
-		servoshooter = new ServoShooter();
-		
-		oi = new OI();
-		
-		autonomousCommand = new DriveForwardAUTON();
     }
 	
 	/**
@@ -101,7 +85,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-        //Scheduler.getInstance().run();
+        Scheduler.getInstance().run();
     }
 
     public void teleopInit() {
@@ -109,8 +93,7 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        if (autonomousCommand != null) 
-        	autonomousCommand.cancel();
+        if (autonomousCommand != null) autonomousCommand.cancel();
     }
 
     /**
